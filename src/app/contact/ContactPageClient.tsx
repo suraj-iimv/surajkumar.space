@@ -6,9 +6,9 @@ import PageTransition from "@/components/layout/PageTransition";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const socialLinks = [
-  { href: "https://github.com/surajkumar", label: "GitHub", icon: "↗" },
-  { href: "https://linkedin.com/in/surajkumar", label: "LinkedIn", icon: "↗" },
-  { href: "mailto:hello@surajkumar.dev", label: "hello@surajkumar.dev", icon: "✉" },
+  { href: "https://github.com/suraj-iimv", label: "GitHub", icon: "↗" },
+  { href: "https://linkedin.com/in/surajkr0501", label: "LinkedIn", icon: "↗" },
+  { href: "mailto:surajkr.iimv@gmail.com", label: "surajkr.iimv@gmail.com", icon: "✉" },
 ];
 
 export default function ContactPageClient() {
