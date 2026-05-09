@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+/* ============================================
+   Design Tokens — CSS Custom Properties
+   Dark-mode-ready architecture
+   ============================================ */
+
+:root {
+  /* Surfaces */
+  --color-bg-primary: 250 250 250;
+  --color-bg-secondary: 245 245 245;
+  --color-bg-tertiary: 239 239 239;
+  --color-bg-elevated: 255 255 255;
+
+  /* Text */
+  --color-text-primary: 26 26 26;
+  --color-text-secondary: 85 85 85;
+  --color-text-tertiary: 153 153 153;
+
+  /* Accent */
+  --color-accent: 61 61 61;
+  --color-accent-muted: 107 114 128;
+
+  /* Borders */
+  --color-border: 229 229 229;
+  --color-border-hover: 200 200 200;
+
+  /* Status */
+  --color-status-live: 34 197 94;
+  --color-status-experimental: 245 158 11;
+  --color-status-progress: 59 130 246;
+  --color-status-archived: 156 163 175;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 600ms;
+}
+
+/* Future dark mode */
+[data-theme="dark"] {
+  --color-bg-primary: 10 10 10;
+  --color-bg-secondary: 18 18 18;
+  --color-bg-tertiary: 28 28 28;
+  --color-bg-elevated: 24 24 24;
+  --color-text-primary: 240 240 240;
+  --color-text-secondary: 163 163 163;
+  --color-text-tertiary: 115 115 115;
+  --color-accent: 229 229 229;
+  --color-accent-muted: 163 163 163;
+  --color-border: 38 38 38;
+  --color-border-hover: 55 55 55;
+}
+
+@theme inline {
+  --color-surface-primary: rgb(var(--color-bg-primary));
+  --color-surface-secondary: rgb(var(--color-bg-secondary));
+  --color-surface-tertiary: rgb(var(--color-bg-tertiary));
+  --color-surface-elevated: rgb(var(--color-bg-elevated));
+
+  --color-content-primary: rgb(var(--color-text-primary));
+  --color-content-secondary: rgb(var(--color-text-secondary));
+  --color-content-tertiary: rgb(var(--color-text-tertiary));
+
+  --color-accent: rgb(var(--color-accent));
+  --color-accent-muted: rgb(var(--color-accent-muted));
+
+  --color-border: rgb(var(--color-border));
+  --color-border-hover: rgb(var(--color-border-hover));
+
+  --color-status-live: rgb(var(--color-status-live));
+  --color-status-experimental: rgb(var(--color-status-experimental));
+  --color-status-progress: rgb(var(--color-status-progress));
+  --color-status-archived: rgb(var(--color-status-archived));
+
+  --font-sans: var(--font-inter), var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: rgb(var(--color-bg-primary));
+  color: rgb(var(--color-text-primary));
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Selection */
+::selection {
+  background-color: rgb(var(--color-accent) / 0.12);
+  color: rgb(var(--color-text-primary));
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-border-hover));
+}
+
+/* Skip Navigation */
+.skip-to-main {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 100;
+  padding: 8px 16px;
+  background: rgb(var(--color-text-primary));
+  color: rgb(var(--color-bg-primary));
+  border-radius: 0 0 8px 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: top 0.2s;
+}
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* Focus States */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-accent) / 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Prose / Article Styles */
+.prose {
+  max-width: 680px;
+  line-height: 1.8;
+}
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: rgb(var(--color-text-primary));
+}
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: rgb(var(--color-text-primary));
+}
+.prose p {
+  margin-bottom: 1.25rem;
+  color: rgb(var(--color-text-secondary));
+}
+.prose ul, .prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  color: rgb(var(--color-text-secondary));
+}
+.prose li {
+  margin-bottom: 0.5rem;
+}
+.prose strong {
+  font-weight: 600;
+  color: rgb(var(--color-text-primary));
+}
+.prose a {
+  color: rgb(var(--color-text-primary));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgb(var(--color-border));
+  transition: text-decoration-color var(--duration-fast);
+}
+.prose a:hover {
+  text-decoration-color: rgb(var(--color-text-primary));
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 2px 6px;
+  background: rgb(var(--color-bg-secondary));
+  border-radius: 4px;
+}
+.prose pre {
+  background: rgb(var(--color-bg-secondary));
+  border: 1px solid rgb(var(--color-border));
+  border-radius: 8px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+.prose blockquote {
+  border-left: 3px solid rgb(var(--color-border));
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: rgb(var(--color-text-tertiary));
+  font-style: italic;
+}
+.prose img {
+  border-radius: 8px;
+  margin: 2rem 0;
+}

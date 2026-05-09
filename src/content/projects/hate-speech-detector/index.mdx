@@ -1,0 +1,42 @@
+---
+title: "Hate Speech Detector"
+description: "AI-powered text analysis tool that identifies and classifies hate speech patterns in real-time, helping create safer digital spaces."
+tags: ["NLP", "Machine Learning", "Python", "React", "Transformers"]
+status: "live"
+type: "external"
+featured: true
+liveUrl: "https://hate-speech-detector.vercel.app"
+githubUrl: "https://github.com/surajkumar/hate-speech-detector"
+image: "/images/projects/hate-speech-detector.jpg"
+year: "2025"
+---
+
+## The Problem
+
+Online toxicity continues to be one of the most pressing challenges in digital communication. Moderating content at scale requires intelligent systems that can understand nuance, context, and the evolving nature of harmful language. Manual moderation is neither scalable nor sustainable.
+
+## Approach
+
+Built a real-time text analysis pipeline that combines transformer-based NLP models with a clean, accessible interface. The system classifies text across multiple categories of harmful content while providing confidence scores and explanatory context.
+
+### Key Design Decisions
+
+- **Model Selection**: Fine-tuned a BERT-based classifier on curated datasets covering multiple categories of hate speech, achieving high accuracy while maintaining inference speed.
+- **Real-time Processing**: Implemented streaming inference to provide instant feedback as users type, creating a responsive experience.
+- **Explainability**: Added attention visualization to help users understand *why* certain text is flagged, building trust in the system.
+
+## Architecture
+
+The system follows a clean client-server architecture:
+
+- **Frontend**: React application with real-time text input, visualization of classification results, and confidence indicators
+- **Backend**: Python API service handling model inference, text preprocessing, and result formatting
+- **Model Pipeline**: BERT tokenizer → transformer encoder → classification head → confidence calibration
+
+## Learnings
+
+Building this project reinforced several key insights:
+
+1. **Context matters more than keywords** — Simple keyword-based approaches fail catastrophically. Language is contextual, and models need to understand semantic relationships.
+2. **Explainability builds trust** — Users are more likely to accept AI decisions when they understand the reasoning behind them.
+3. **Edge cases are the real challenge** — Sarcasm, coded language, and cultural context make this problem genuinely hard.

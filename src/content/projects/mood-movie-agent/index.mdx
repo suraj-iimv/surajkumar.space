@@ -1,0 +1,39 @@
+---
+title: "Mood-Based Movie Recommendation Agent"
+description: "A conversational AI agent that recommends movies based on your current emotional state, using natural language understanding and intelligent filtering."
+tags: ["LLM", "Agents", "Conversational AI", "Next.js", "OpenAI"]
+status: "live"
+type: "external"
+featured: true
+liveUrl: "https://mood-movie-agent.vercel.app"
+githubUrl: "https://github.com/surajkumar/mood-movie-agent"
+image: "/images/projects/mood-movie-agent.jpg"
+year: "2025"
+---
+
+## The Problem
+
+Choosing what to watch shouldn't feel like a chore. Traditional recommendation systems rely on viewing history and ratings — but what you want to watch on a rainy Sunday afternoon is fundamentally different from what you'd enjoy on a Friday night. Mood drives entertainment choices far more than past behavior.
+
+## Approach
+
+Designed a conversational agent that understands emotional context through natural dialogue. Instead of browsing genres or scrolling endlessly, users simply describe how they feel — and the agent surfaces thoughtful, personalized recommendations.
+
+### Key Design Decisions
+
+- **Conversational Interface**: Natural language input rather than dropdowns or filters. Users describe their mood in their own words.
+- **Emotional Mapping**: Developed a nuanced emotion-to-genre mapping system that goes beyond simple sentiment analysis to understand complex emotional states.
+- **Curated Quality**: The agent prioritizes quality over quantity — recommending 3–5 carefully selected films rather than overwhelming lists.
+
+## Architecture
+
+- **Frontend**: Next.js application with a clean conversational UI, streaming responses, and elegant movie cards
+- **AI Layer**: OpenAI GPT model with carefully crafted system prompts for emotional understanding and movie knowledge
+- **Data**: Integration with movie databases for metadata, ratings, availability, and poster imagery
+- **Agent Logic**: Multi-step reasoning — mood extraction → genre mapping → filtering → ranking → presentation
+
+## Learnings
+
+1. **Prompt engineering is product design** — The quality of recommendations is directly tied to how well the system prompt frames the agent's personality, constraints, and reasoning approach.
+2. **Less is more in recommendations** — Users respond better to 3 thoughtful suggestions than 20 algorithmically generated ones.
+3. **Conversation design matters** — The way the agent asks follow-up questions and presents results is as important as the underlying model quality.

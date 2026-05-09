@@ -1,0 +1,36 @@
+"use client";
+
+import Tag from "@/components/ui/Tag";
+import StatusBadge from "@/components/ui/StatusBadge";
+import type { Experiment } from "@/data/experiments";
+
+interface ExperimentCardProps {
+  experiment: Experiment;
+}
+
+export default function ExperimentCard({ experiment }: ExperimentCardProps) {
+  return (
+    <article className="group p-6 rounded-xl border border-border bg-surface-elevated hover:border-border-hover hover:shadow-sm transition-all duration-400">
+      <div className="flex items-center justify-between mb-4">
+        <StatusBadge status={experiment.status} />
+        <span className="text-xs text-content-tertiary capitalize">
+          {experiment.category.replace("-", " ")}
+        </span>
+      </div>
+
+      <h3 className="text-base font-medium text-content-primary mb-2 group-hover:text-content-primary/80 transition-colors">
+        {experiment.title}
+      </h3>
+
+      <p className="text-sm text-content-tertiary leading-relaxed mb-4">
+        {experiment.description}
+      </p>
+
+      <div className="flex flex-wrap gap-1.5">
+        {experiment.tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </div>
+    </article>
+  );
+}
