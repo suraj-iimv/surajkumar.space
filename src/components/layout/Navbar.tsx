@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import MobileMenu from "./MobileMenu";
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/lab", label: "Lab" },
   { href: "/writing", label: "Writing" },
@@ -52,11 +53,10 @@ export default function Navbar() {
       <nav
         role="navigation"
         aria-label="Main navigation"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-surface-primary/80 backdrop-blur-xl border-b border-border"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+          ? "bg-surface-primary/80 backdrop-blur-xl border-b border-border"
+          : "bg-transparent"
+          }`}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
@@ -64,7 +64,7 @@ export default function Navbar() {
             href="/"
             className="text-content-primary font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity duration-300"
           >
-            SK
+            SURAJ KUMAR
           </Link>
 
           {/* Desktop Nav */}
@@ -74,11 +74,10 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 aria-current={pathname === link.href ? "page" : undefined}
-                className={`text-sm transition-all duration-300 ${
-                  pathname === link.href
-                    ? "text-content-primary font-medium"
-                    : "text-content-tertiary hover:text-content-primary"
-                }`}
+                className={`text-sm transition-all duration-300 ${pathname === link.href
+                  ? "text-content-primary font-medium"
+                  : "text-content-tertiary hover:text-content-primary"
+                  }`}
               >
                 {link.label}
               </Link>

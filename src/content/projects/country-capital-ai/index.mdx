@@ -1,0 +1,37 @@
+---
+title: "Country Capital AI"
+description: "A lightweight AI-assisted knowledge interaction system demonstrating modular API architecture, FastAPI backend design, and scalable AI integration workflows."
+tags: ["FastAPI", "OpenAI", "Python", "API Architecture", "System Design"]
+status: "live"
+type: "external"
+featured: true
+liveUrl: "/country-capital"
+image: "/images/projects/country-capital-ai.png"
+year: "2026"
+---
+
+## The Vision
+
+Modern applications increasingly rely on intelligent, loosely coupled architectures. **Country Capital AI** was conceived not merely as a utility, but as an exploration in developer tooling elegance and system design thinking. It serves as a foundational blueprint for integrating large language models into highly structured, reliable API workflows.
+
+## Current State: The Architecture
+
+At its core, the system prioritizes clarity and speed. Built entirely as a headless service, it emphasizes a robust backend architecture over immediate visual presentation.
+
+### Key Design Decisions
+
+- **FastAPI Foundation**: Chosen for its native asynchronous capabilities and automatic OpenAPI schema generation, providing a deeply typed, performant base layer.
+- **Modular AI Workflows**: The OpenAI integration is abstracted away from the routing logic, allowing for seamless model swapping or logic iteration without disturbing the core API contract.
+- **Pydantic Validation**: Strict data validation ensures that the semantic responses from the language model are consistently shaped before they reach the consumer.
+
+## Core Interactions
+
+The API is designed to be completely self-documenting and intuitive for any developer to consume. 
+
+By sending a minimal payload, consumers receive enriched, standardized geographic data. The complexity of parsing natural language and resolving ambiguities is entirely handled server-side, presenting the client with nothing but a clean, deterministic JSON response.
+
+## Future Evolution
+
+This project was intentionally built as a decoupled backend service to establish a strong, testable foundation. 
+
+The architecture is explicitly designed to support future evolution into a fully integrated premium Next.js frontend application. By establishing the semantic boundaries and data contracts at the API layer first, the eventual frontend can focus entirely on delivering a calm, luxury user experience without being burdened by complex business logic or AI orchestration.
