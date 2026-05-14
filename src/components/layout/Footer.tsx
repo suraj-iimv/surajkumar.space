@@ -13,9 +13,25 @@ export default function Footer() {
       role="contentinfo"
     >
       <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-content-tertiary">
-          © {new Date().getFullYear()} Suraj Kumar
-        </p>
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+          <p className="text-sm text-content-tertiary">
+            © {new Date().getFullYear()} Suraj Kumar
+          </p>
+          <nav aria-label="Legal" className="flex items-center gap-4 border-l border-border/50 pl-4 sm:pl-8 ml-0 sm:ml-0">
+            <Link
+              href="/privacy"
+              className="text-xs text-content-tertiary hover:text-content-primary transition-colors duration-normal ease-out-expo"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-xs text-content-tertiary hover:text-content-primary transition-colors duration-normal ease-out-expo"
+            >
+              Terms
+            </Link>
+          </nav>
+        </div>
         <nav aria-label="Social links" className="flex items-center gap-6">
           {socialLinks.map((link) => (
             <Link
@@ -27,7 +43,7 @@ export default function Footer() {
                   ? undefined
                   : "noopener noreferrer"
               }
-              className="text-sm text-content-tertiary hover:text-content-primary transition-colors duration-300"
+              className="text-sm text-content-tertiary hover:text-content-primary transition-colors duration-normal ease-out-expo"
             >
               {link.label}
             </Link>

@@ -45,7 +45,7 @@ export const MONETIZATION_CONFIG: MonetizationConfig = {
     allowMotion: false,      // Preserve restrained motion philosophy
     preserveWhitespacePriority: true,
     maxAdsPerPage: 3,
-    allowedZones: ['/lab/ads'],
+    allowedZones: ['/lab/monetization-systems'],
     restrictedZones: ['/', '/projects', '/writing'], // Protected premium surfaces
   },
 

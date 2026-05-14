@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata = generatePageMetadata({
   title: "Projects",
   description:
-    "Digital product experiments exploring AI, automation, and interaction design.",
+    "Implementations exploring modular architecture and the practical application of intelligent systems.",
 });
 
 export default function ProjectsPage() {

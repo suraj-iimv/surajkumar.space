@@ -11,9 +11,9 @@ interface PageMeta {
 
 const siteConfig = {
   name: "Suraj Kumar",
-  url: "https://surajkumar.dev",
+  url: "https://surajkumar.space",
   description:
-    "Creative technologist exploring AI-powered digital experiences, automation systems, and interactive product experiments.",
+    "Suraj Kumar — Thoughtful systems exploration, modular workflows, and the design of calm digital environments.",
 };
 
 export function generatePageMetadata(page: PageMeta): Metadata {

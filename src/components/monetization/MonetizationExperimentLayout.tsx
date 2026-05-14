@@ -3,6 +3,8 @@
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import PageTransition from '@/components/layout/PageTransition';
+import RelatedReflection from '@/components/lab/RelatedReflection';
+import { Article } from '@/lib/mdx';
 
 interface MonetizationExperimentLayoutProps {
   title: string;
@@ -13,6 +15,7 @@ interface MonetizationExperimentLayoutProps {
     validated: boolean;
   };
   children: React.ReactNode;
+  relatedArticles?: Article[];
 }
 
 /**
@@ -28,6 +31,7 @@ export default function MonetizationExperimentLayout({
   description,
   metadata,
   children,
+  relatedArticles,
 }: MonetizationExperimentLayoutProps) {
   return (
     <PageTransition>
@@ -67,6 +71,8 @@ export default function MonetizationExperimentLayout({
           <div className="space-y-24">
             {children}
           </div>
+
+          <RelatedReflection articles={relatedArticles || []} />
         </div>
       </div>
     </PageTransition>

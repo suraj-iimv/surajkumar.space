@@ -73,12 +73,12 @@ export default function Hero() {
             transition={{ duration: 0.5, ease, delay: 0.1 }}
             className="text-sm text-content-tertiary mb-6 tracking-wide"
           >
-            Suraj Kumar — Creative Technologist
+            Suraj Kumar — Modular Systems & Research
           </motion.p>
 
           {/* Headline */}
           <AnimatedText
-            text="Building thoughtful AI-powered digital experiences."
+            text="Building systems that evolve."
             className="text-[clamp(2.25rem,5vw,4rem)] font-semibold leading-[1.1] tracking-tight text-content-primary"
             delay={0.2}
           />
@@ -90,8 +90,7 @@ export default function Hero() {
             transition={{ duration: 0.6, ease, delay: 0.8 }}
             className="mt-6 text-lg md:text-xl text-content-secondary max-w-xl leading-relaxed"
           >
-            Exploring AI systems, automation, interaction design, and digital
-            experimentation.
+            Observations on systems architecture, modular workflows, and the design of calm digital environments.
           </motion.p>
 
           {/* CTAs */}

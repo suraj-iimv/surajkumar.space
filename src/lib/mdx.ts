@@ -19,6 +19,7 @@ export interface ProjectFrontmatter {
   image: string;
   video?: string;
   year: string;
+  ecosystemLinks?: { title: string; href: string; label: string }[];
 }
 
 export interface Project extends ProjectFrontmatter {
@@ -34,6 +35,9 @@ export interface ArticleFrontmatter {
   excerpt: string;
   coverImage?: string;
   published: boolean;
+  relatedExperiments?: string[];
+  isFoundational?: boolean;
+  ecosystemLinks?: { title: string; href: string; label: string }[];
 }
 
 export interface Article extends ArticleFrontmatter {

@@ -24,11 +24,12 @@ export default function LabPageClient() {
           <ScrollReveal>
             <div className="max-w-2xl mb-16 md:mb-20">
               <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-content-primary mb-4">
-                Lab
+                The Lab
               </h1>
               <p className="text-lg text-content-secondary leading-relaxed">
-                Prototypes, unfinished experiments, AI concepts, and automation
-                explorations. Not everything here is polished — that&apos;s the point.
+                Prototypes, architectural concepts, and automated
+                explorations. A space for validating hypotheses through rapid
+                technical discovery.
               </p>
             </div>
           </ScrollReveal>

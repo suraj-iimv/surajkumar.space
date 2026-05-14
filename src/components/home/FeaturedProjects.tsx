@@ -82,8 +82,8 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
           <SectionHeading
-            title="Selected Work"
-            subtitle="Digital product experiments exploring AI, automation, and interaction design."
+            title="Implementations"
+            subtitle="Selected projects exploring the logic of modular architecture and the reasoning behind intelligent systems."
             viewAllHref="/projects"
           />
         </ScrollReveal>
@@ -99,6 +99,21 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
             </div>
           ))}
         </div>
+        
+        <ScrollReveal delay={0.4}>
+          <div className="mt-16 pt-8 border-t border-border/30">
+            <p className="text-sm text-content-tertiary italic">
+              The research lineage for these implementations is documented in the{" "}
+              <Link
+                href="/lab"
+                className="text-content-secondary hover:text-content-primary transition-colors underline underline-offset-4 decoration-border/50 hover:decoration-content-primary"
+              >
+                Lab
+              </Link>
+              .
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

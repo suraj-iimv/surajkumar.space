@@ -1,7 +1,16 @@
+import Link from "next/link";
+import RelatedExperiment from "@/components/writing/RelatedExperiment";
+import RelatedReflection from "@/components/lab/RelatedReflection";
+import EcosystemContext from "@/components/writing/EcosystemContext";
+import * as CaseStudy from "@/components/projects/CaseStudyComponents";
 
 /* Custom MDX components for rendering project and article content */
 export function getMDXComponents() {
   return {
+    RelatedExperiment,
+    RelatedReflection,
+    EcosystemContext,
+    ...CaseStudy,
     h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
       <h2
         className="text-2xl font-semibold tracking-tight text-content-primary mt-12 mb-4"
@@ -38,14 +47,24 @@ export function getMDXComponents() {
     strong: (props: React.HTMLAttributes<HTMLElement>) => (
       <strong className="font-semibold text-content-primary" {...props} />
     ),
-    a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-      <a
-        className="text-content-primary underline underline-offset-3 decoration-border hover:decoration-content-primary transition-colors"
-        target="_blank"
-        rel="noopener noreferrer"
-        {...props}
-      />
-    ),
+    a: ({ href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+      const isInternal = href?.startsWith("/") || href?.startsWith("#");
+      const className = "text-content-primary underline underline-offset-3 decoration-border hover:decoration-content-primary transition-colors";
+
+      if (isInternal) {
+        return <Link href={href || "#"} className={className} {...(props as any)} />;
+      }
+
+      return (
+        <a
+          href={href}
+          className={className}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...props}
+        />
+      );
+    },
     code: (props: React.HTMLAttributes<HTMLElement>) => (
       <code
         className="font-mono text-[0.9em] px-1.5 py-0.5 bg-surface-secondary rounded"

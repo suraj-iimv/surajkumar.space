@@ -5,12 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import MobileMenu from "./MobileMenu";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/lab", label: "Lab" },
-  { href: "/writing", label: "Writing" },
+  { href: "/writing", label: "Reflections" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -62,7 +63,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-content-primary font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity duration-300"
+            className="text-content-primary font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity duration-normal ease-out-expo"
           >
             SURAJ KUMAR
           </Link>
@@ -74,7 +75,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 aria-current={pathname === link.href ? "page" : undefined}
-                className={`text-sm transition-all duration-300 ${pathname === link.href
+                className={`text-sm transition-colors duration-normal ease-out-expo ${pathname === link.href
                   ? "text-content-primary font-medium"
                   : "text-content-tertiary hover:text-content-primary"
                   }`}
@@ -82,6 +83,8 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            <ThemeToggle />
 
             {/* CMD+K Trigger */}
             <button
@@ -95,13 +98,16 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <motion.button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative w-8 h-8 flex items-center justify-center"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-          >
+          <div className="flex md:hidden items-center gap-4">
+            <ThemeToggle />
+            
+            {/* Mobile Menu Toggle */}
+            <motion.button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="relative w-8 h-8 flex items-center justify-center"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+            >
             <div className="w-5 flex flex-col gap-1.5">
               <motion.span
                 animate={
@@ -126,6 +132,7 @@ export default function Navbar() {
               />
             </div>
           </motion.button>
+          </div>
         </div>
       </nav>
 

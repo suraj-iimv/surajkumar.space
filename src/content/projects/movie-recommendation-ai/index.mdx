@@ -1,6 +1,6 @@
 ---
 title: "Movie Recommendation AI"
-description: "An elegant, AI-driven cinematic exploration tool providing curated movie details and smart recommendations."
+description: "A cinematic exploration tool architected to transform raw film metadata into a calm, editorial-grade discovery experience."
 tags: ["Next.js", "AI", "Framer Motion", "FastAPI"]
 status: "live"
 type: "embedded"
@@ -11,26 +11,36 @@ image: "/images/projects/movie-recommendation-ai.png"
 year: "2026"
 ---
 
-## The Vision
-
+<CaseStudyOverview>
 The Movie Recommendation AI is designed to elevate the standard film search experience into a calm, cinematic journey. By stripping away the visual clutter of traditional entertainment dashboards, this tool provides an editorial-grade presentation of film metadata, critical reception, and structurally curated recommendations.
+</CaseStudyOverview>
 
-## Architecture
-
+<CaseStudyArchitecture>
 This project strictly adheres to the ecosystem's modular architecture, isolating the Next.js App Router frontend from the decentralized API backend.
 
-### Key Design Decisions
+<ArchitectureCallout>
+  The architecture prioritizes **decoupling**. The frontend is a pure interaction layer that consumes normalized data from a secure proxy, allowing for immediate swapping of underlying data providers without impacting the user interface.
+</ArchitectureCallout>
+</CaseStudyArchitecture>
 
-- **Cinematic Hierarchy**: The interface is rigorously structured to prioritize the primary search result, ensuring its visual dominance over the related recommendations.
-- **Defensive State Management**: The frontend employs aggressive request protection, gracefully managing loading states while preserving context, preventing duplicate queries, and ensuring seamless transitions.
-- **Extensible Layout**: The recommendation cards are built with spatial flexibility, architected to support future integrations of rich media such as high-resolution posters and interactive thumbnails without requiring foundational rewrites.
+<CaseStudyDecisions>
+### Cinematic Hierarchy
+The interface is rigorously structured to prioritize the primary search result, ensuring its visual dominance over the related recommendations.
 
-## Tech Stack
+<TechnicalHighlight title="Defensive State Management">
+  The frontend employs aggressive request protection, gracefully managing loading states while preserving context, preventing duplicate queries, and ensuring seamless transitions.
+</TechnicalHighlight>
 
-- **Frontend**: Next.js 16 (App Router), Tailwind CSS v4, Framer Motion
-- **Backend**: Node.js Proxy to OpenRouter (external integration deployed on Render)
-- **Deployment**: Vercel (Frontend ecosystem)
+### Extensible Layout
+The recommendation cards are built with spatial flexibility, architected to support future integrations of rich media such as high-resolution posters and interactive thumbnails without requiring foundational rewrites.
+</CaseStudyDecisions>
 
-## Learnings & Evolution
+<CaseStudyLessons>
+Integrating an external movie data API required a strict focus on data normalization and defensive programming. The core challenge was transforming a raw JSON payload into a calm luxury experience, demanding precise typographic choices and subtle entry animations.
 
-Integrating an external movie data API required a strict focus on data normalization and defensive programming. The core challenge was transforming a raw JSON payload into a calm luxury experience, demanding precise typographic choices and subtle entry animations. Future iterations will focus on injecting visual assets and exploring mood-based relational graphs.
+<RelatedExperiment experimentId="semantic-search-playground" />
+</CaseStudyLessons>
+
+<CaseStudyFuture>
+Future iterations will focus on injecting visual assets and exploring mood-based relational graphs. We are also exploring the integration of a direct Lab experiment for semantic movie similarity.
+</CaseStudyFuture>

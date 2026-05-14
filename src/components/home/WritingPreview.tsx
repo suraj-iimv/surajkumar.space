@@ -16,8 +16,8 @@ export default function WritingPreview({ articles }: WritingPreviewProps) {
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
           <SectionHeading
-            title="Writing"
-            subtitle="Thoughts on AI, experimentation, and building things."
+            title="Reflections"
+            subtitle="The philosophy of systems architecture, modular reasoning, and technical evolution."
             viewAllHref="/writing"
           />
         </ScrollReveal>
@@ -51,6 +51,21 @@ export default function WritingPreview({ articles }: WritingPreviewProps) {
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal delay={0.4}>
+          <div className="mt-16 pt-8 border-t border-border/30">
+            <p className="text-sm text-content-tertiary italic">
+              Exploring the foundational logic of a{" "}
+              <Link
+                href="/about"
+                className="text-content-secondary hover:text-content-primary transition-colors underline underline-offset-4 decoration-border/50 hover:decoration-content-primary"
+              >
+                living ecosystem
+              </Link>
+              .
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

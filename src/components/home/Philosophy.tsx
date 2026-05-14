@@ -18,6 +18,15 @@ export default function Philosophy() {
               Every project is an experiment. Every system is a question.
               The goal isn&apos;t perfection — it&apos;s understanding.
             </p>
+            <div className="mt-8">
+              <a
+                href="/about"
+                className="text-xs uppercase tracking-widest text-content-tertiary hover:text-content-primary transition-colors duration-300 flex items-center gap-2 group"
+              >
+                Ecosystem Evolution
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
           </div>
         </ScrollReveal>
       </div>

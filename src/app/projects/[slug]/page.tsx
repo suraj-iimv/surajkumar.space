@@ -10,6 +10,9 @@ import StatusBadge from "@/components/ui/StatusBadge";
 import Button from "@/components/ui/Button";
 import PageTransition from "@/components/layout/PageTransition";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import BackLink from "@/components/ui/BackLink";
+
+import EcosystemContext from "@/components/writing/EcosystemContext";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -44,12 +47,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="max-w-4xl mx-auto px-6">
           {/* Back link */}
           <ScrollReveal>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 text-sm text-content-tertiary hover:text-content-primary transition-colors mb-10"
-            >
-              ← Back to Projects
-            </Link>
+            <BackLink href="/projects" label="Back to Projects" />
           </ScrollReveal>
 
           {/* Hero */}
@@ -127,6 +125,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               />
             </div>
           </ScrollReveal>
+
+          {/* Ecosystem Context */}
+          {project.ecosystemLinks && (
+            <EcosystemContext links={project.ecosystemLinks} />
+          )}
         </div>
       </article>
     </PageTransition>

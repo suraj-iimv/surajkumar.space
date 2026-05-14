@@ -6,6 +6,7 @@ export interface Experiment {
   status: "active" | "archived" | "concept";
   tags: string[];
   url?: string;
+  relatedArticles?: string[];
 }
 
 export const experiments: Experiment[] = [
@@ -13,19 +14,21 @@ export const experiments: Experiment[] = [
     id: "semantic-search-playground",
     title: "Semantic Search Playground",
     description:
-      "An interactive tool for exploring vector embeddings and semantic similarity across different text inputs.",
+      "An interactive system for exploring vector embeddings and semantic similarity across different text inputs.",
     category: "ai-prototype",
     status: "active",
     tags: ["Embeddings", "Vector DB", "Search"],
+    url: "/lab/semantic-search-playground",
   },
   {
     id: "content-pipeline-agent",
     title: "Content Pipeline Agent",
     description:
-      "Automated content research, synthesis, and formatting pipeline powered by multi-step AI agents.",
+      "Automated content discovery, synthesis, and formatting pipeline powered by multi-step AI agents.",
     category: "automation",
     status: "active",
     tags: ["Agents", "Automation", "LLM"],
+    url: "/lab/content-pipeline-agent",
   },
   {
     id: "gesture-ui-prototype",
@@ -71,7 +74,8 @@ export const experiments: Experiment[] = [
     category: "interaction",
     status: "active",
     tags: ["Monetization", "UX", "Performance"],
-    url: "/lab/ads",
+    url: "/lab/monetization-systems",
+    relatedArticles: ["why-reversible-architecture-matters-in-early-systems"],
   },
 ];
 

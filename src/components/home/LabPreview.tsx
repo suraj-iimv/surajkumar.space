@@ -13,8 +13,8 @@ export default function LabPreview() {
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
           <SectionHeading
-            title="Lab"
-            subtitle="Prototypes, experiments, and unfinished ideas."
+            title="The Lab"
+            subtitle="Where architectural reasoning meets rapid technical discovery through intentional experimentation."
             viewAllHref="/lab"
             viewAllLabel="Explore all"
           />
@@ -46,6 +46,21 @@ export default function LabPreview() {
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal delay={0.4}>
+          <div className="mt-16 pt-8 border-t border-border/30">
+            <p className="text-sm text-content-tertiary italic">
+              Technical discovery informing the{" "}
+              <Link
+                href="/writing"
+                className="text-content-secondary hover:text-content-primary transition-colors underline underline-offset-4 decoration-border/50 hover:decoration-content-primary"
+              >
+                Reflections
+              </Link>{" "}
+              on modular systems architecture.
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import LabPageClient from "./LabPageClient";
 export const metadata = generatePageMetadata({
   title: "Lab",
   description:
-    "Prototypes, experiments, AI concepts, and automation explorations.",
+    "A space for experimentation, prototyping, and the validation of architectural hypotheses.",
 });
 
 export default function LabPage() {

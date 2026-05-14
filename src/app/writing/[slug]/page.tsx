@@ -8,6 +8,9 @@ import { formatDate } from "@/lib/utils";
 import Tag from "@/components/ui/Tag";
 import PageTransition from "@/components/layout/PageTransition";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import BackLink from "@/components/ui/BackLink";
+import RelatedArticles from "@/components/writing/RelatedArticles";
+import EcosystemContext from "@/components/writing/EcosystemContext";
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>;
@@ -44,12 +47,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <div className="max-w-3xl mx-auto px-6">
           {/* Back link */}
           <ScrollReveal>
-            <Link
-              href="/writing"
-              className="inline-flex items-center gap-2 text-sm text-content-tertiary hover:text-content-primary transition-colors mb-10"
-            >
-              ← Back to Writing
-            </Link>
+            <BackLink href="/writing" label="Back to Reflections" />
           </ScrollReveal>
 
           {/* Header */}
@@ -84,6 +82,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               />
             </div>
           </ScrollReveal>
+
+          {/* Ecosystem Context */}
+          {article.ecosystemLinks && (
+            <EcosystemContext links={article.ecosystemLinks} />
+          )}
+
+          {/* Footer / Related Articles */}
+          <RelatedArticles currentSlug={slug} articles={getAllArticles()} />
         </div>
       </article>
     </PageTransition>
