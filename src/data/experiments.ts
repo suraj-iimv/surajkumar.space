@@ -63,6 +63,16 @@ export const experiments: Experiment[] = [
     status: "concept",
     tags: ["Design Systems", "Personalization", "ML"],
   },
+  {
+    id: "monetization-systems",
+    title: "Monetization Systems",
+    description:
+      "Exploring how monetization systems interact with performance, UX, and ecosystem design in a premium environment.",
+    category: "interaction",
+    status: "active",
+    tags: ["Monetization", "UX", "Performance"],
+    url: "/lab/ads",
+  },
 ];
 
 export const categories = [
