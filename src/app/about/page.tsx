@@ -244,7 +244,7 @@ export default function AboutPage() {
               <p className="text-lg text-content-secondary mb-10 max-w-lg mx-auto leading-relaxed">
                 I am always interested in thoughtful conversations about systems, architecture, and the future of human-agent collaboration.
               </p>
-              <Button href="/contact" size="lg">Get in Touch</Button>
+              <Button href="/contact" size="large">Get in Touch</Button>
             </div>
           </ScrollReveal>
         </div>
