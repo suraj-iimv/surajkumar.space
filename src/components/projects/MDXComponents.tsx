@@ -99,7 +99,10 @@ export function getMDXComponents() {
       />
     ),
     img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
-      <Lightbox src={props.src || ""} alt={props.alt || ""}>
+      <Lightbox
+        src={typeof props.src === "string" ? props.src : ""}
+        alt={props.alt || ""}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={typeof props.src === "string" ? props.src : ""}
