@@ -11,6 +11,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import BackLink from "@/components/ui/BackLink";
 import RelatedArticles from "@/components/writing/RelatedArticles";
 import EcosystemContext from "@/components/writing/EcosystemContext";
+import ReadingProgress from "@/components/editorial/ReadingProgress";
+import ReadingMetadata from "@/components/editorial/ReadingMetadata";
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>;
@@ -43,6 +45,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <PageTransition>
+      <ReadingProgress />
       <article className="pt-32 pb-24 md:pb-32">
         <div className="max-w-3xl mx-auto px-6">
           {/* Back link */}
@@ -57,13 +60,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 {article.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-4 text-sm text-content-tertiary mb-6">
-                <time dateTime={article.date}>
-                  {formatDate(article.date)}
-                </time>
-                <span>·</span>
-                <span>{article.readingTime}</span>
-              </div>
+              <ReadingMetadata 
+                readingTime={article.readingTime}
+                updatedDate={article.updatedDate}
+                className="mb-8"
+              />
 
               <div className="flex flex-wrap gap-2">
                 {article.tags.map((tag) => (

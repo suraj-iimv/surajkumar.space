@@ -19,6 +19,8 @@ const items: CommandItem[] = [
   { label: "Writing", href: "/writing", group: "Pages" },
   { label: "About", href: "/about", group: "Pages" },
   { label: "Contact", href: "/contact", group: "Pages" },
+  { label: "Privacy Policy", href: "/privacy", group: "Pages" },
+  { label: "Terms of Service", href: "/terms", group: "Pages" },
   // Projects
   { label: "Hate Speech Detector", href: "/projects/hate-speech-detector", group: "Projects" },
   { label: "Mood-Based Movie Agent", href: "/projects/mood-movie-agent", group: "Projects" },
@@ -81,7 +83,7 @@ export default function CommandMenu() {
             onClick={(e) => e.stopPropagation()}
           >
             <Command
-              className="bg-surface-elevated rounded-xl border border-border shadow-2xl overflow-hidden"
+              className="bg-surface-elevated/80 backdrop-blur-xl rounded-2xl border border-border shadow-3xl overflow-hidden"
               label="Search navigation"
             >
               <Command.Input
@@ -107,9 +109,9 @@ export default function CommandMenu() {
                           key={item.href}
                           value={item.label}
                           onSelect={() => handleSelect(item.href)}
-                          className="flex items-center gap-3 px-3 py-2.5 text-sm text-content-secondary rounded-lg cursor-pointer data-[selected=true]:bg-surface-secondary data-[selected=true]:text-content-primary transition-colors"
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-content-secondary rounded-xl cursor-pointer data-[selected=true]:bg-surface-secondary data-[selected=true]:text-content-primary transition-all duration-200"
                         >
-                          <span className="text-content-tertiary text-xs">→</span>
+                          <span className="text-content-tertiary text-[10px] opacity-40">→</span>
                           {item.label}
                         </Command.Item>
                       ))}

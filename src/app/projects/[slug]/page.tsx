@@ -13,6 +13,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import BackLink from "@/components/ui/BackLink";
 
 import EcosystemContext from "@/components/writing/EcosystemContext";
+import ReadingProgress from "@/components/editorial/ReadingProgress";
+import ReadingMetadata from "@/components/editorial/ReadingMetadata";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -43,6 +45,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <PageTransition>
+      <ReadingProgress />
       <article className="pt-32 pb-24 md:pb-32">
         <div className="max-w-4xl mx-auto px-6">
           {/* Back link */}
@@ -53,13 +56,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {/* Hero */}
           <ScrollReveal>
             <header className="mb-12">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex flex-wrap items-center gap-4 mb-6">
                 <StatusBadge status={project.status} />
+                <ReadingMetadata 
+                  readingTime={project.readingTime}
+                  updatedDate={project.updatedDate}
+                />
                 <span className="text-sm text-content-tertiary">
                   {project.year}
-                </span>
-                <span className="text-sm text-content-tertiary">
-                  · {project.readingTime}
                 </span>
               </div>
 

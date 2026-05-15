@@ -20,6 +20,7 @@ export interface ProjectFrontmatter {
   video?: string;
   year: string;
   ecosystemLinks?: { title: string; href: string; label: string }[];
+  updatedDate?: string;
 }
 
 export interface Project extends ProjectFrontmatter {
@@ -38,6 +39,7 @@ export interface ArticleFrontmatter {
   relatedExperiments?: string[];
   isFoundational?: boolean;
   ecosystemLinks?: { title: string; href: string; label: string }[];
+  updatedDate?: string;
 }
 
 export interface Article extends ArticleFrontmatter {

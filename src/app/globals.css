@@ -99,6 +99,9 @@ body {
   color: rgb(var(--color-text-primary));
   font-family: var(--font-sans);
   line-height: 1.6;
+  /* Selective theme transitions */
+  transition: background-color var(--duration-normal) var(--ease-out-expo),
+              color var(--duration-normal) var(--ease-out-expo);
 }
 
 /* Selection */
@@ -145,6 +148,21 @@ body {
   outline: 2px solid rgb(var(--color-accent) / 0.5);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Scoped surface transitions */
+.bg-surface-primary,
+.bg-surface-secondary,
+.bg-surface-tertiary,
+.bg-surface-elevated {
+  transition: background-color var(--duration-normal) var(--ease-out-expo),
+              border-color var(--duration-normal) var(--ease-out-expo);
+}
+
+.text-content-primary,
+.text-content-secondary,
+.text-content-tertiary {
+  transition: color var(--duration-normal) var(--ease-out-expo);
 }
 
 /* Reduced Motion */

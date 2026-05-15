@@ -3,6 +3,9 @@ import RelatedExperiment from "@/components/writing/RelatedExperiment";
 import RelatedReflection from "@/components/lab/RelatedReflection";
 import EcosystemContext from "@/components/writing/EcosystemContext";
 import * as CaseStudy from "@/components/projects/CaseStudyComponents";
+import HeadingAnchor from "@/components/editorial/HeadingAnchor";
+import Lightbox from "@/components/editorial/Lightbox";
+import { slugify } from "@/lib/utils";
 
 /* Custom MDX components for rendering project and article content */
 export function getMDXComponents() {
@@ -11,18 +14,30 @@ export function getMDXComponents() {
     RelatedReflection,
     EcosystemContext,
     ...CaseStudy,
-    h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h2
-        className="text-2xl font-semibold tracking-tight text-content-primary mt-12 mb-4"
-        {...props}
-      />
-    ),
-    h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h3
-        className="text-xl font-medium tracking-tight text-content-primary mt-8 mb-3"
-        {...props}
-      />
-    ),
+    h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const id = props.id || (typeof props.children === 'string' ? slugify(props.children) : undefined);
+      return (
+        <HeadingAnchor id={id}>
+          <h2
+            id={id}
+            className="text-2xl font-semibold tracking-tight text-content-primary mt-12 mb-4 scroll-mt-24"
+            {...props}
+          />
+        </HeadingAnchor>
+      );
+    },
+    h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const id = props.id || (typeof props.children === 'string' ? slugify(props.children) : undefined);
+      return (
+        <HeadingAnchor id={id}>
+          <h3
+            id={id}
+            className="text-xl font-medium tracking-tight text-content-primary mt-8 mb-3 scroll-mt-24"
+            {...props}
+          />
+        </HeadingAnchor>
+      );
+    },
     p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
       <p
         className="text-content-secondary leading-relaxed mb-5"
@@ -84,13 +99,15 @@ export function getMDXComponents() {
       />
     ),
     img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={typeof props.src === "string" ? props.src : ""}
-        alt={props.alt || ""}
-        className="rounded-lg my-8 w-full"
-        loading="lazy"
-      />
+      <Lightbox src={props.src || ""} alt={props.alt || ""}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={typeof props.src === "string" ? props.src : ""}
+          alt={props.alt || ""}
+          className="rounded-lg my-8 w-full hover:opacity-90 transition-opacity duration-300"
+          loading="lazy"
+        />
+      </Lightbox>
     ),
     hr: () => <hr className="border-border my-10" />,
   };

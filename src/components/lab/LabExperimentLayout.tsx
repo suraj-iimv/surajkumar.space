@@ -6,6 +6,8 @@ import PageTransition from '@/components/layout/PageTransition';
 import RelatedReflection from '@/components/lab/RelatedReflection';
 import BackLink from '@/components/ui/BackLink';
 import { Article } from '@/lib/mdx';
+import ReadingProgress from '@/components/editorial/ReadingProgress';
+import ReadingMetadata from '@/components/editorial/ReadingMetadata';
 
 interface LabExperimentLayoutProps {
   title: string;
@@ -13,6 +15,8 @@ interface LabExperimentLayoutProps {
   status: 'Active Exploration' | 'System Refinement' | 'UX Validation' | 'Flagship Exploration';
   children: React.ReactNode;
   relatedArticles?: Article[];
+  readingTime?: string;
+  updatedDate?: string;
 }
 
 export default function LabExperimentLayout({
@@ -21,9 +25,12 @@ export default function LabExperimentLayout({
   status,
   children,
   relatedArticles,
+  readingTime,
+  updatedDate,
 }: LabExperimentLayoutProps) {
   return (
     <PageTransition>
+      <ReadingProgress />
       <div className="pt-32 pb-24 md:pb-32">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
@@ -41,6 +48,12 @@ export default function LabExperimentLayout({
                 <span className="text-[10px] uppercase tracking-[0.2em] px-2.5 py-1 rounded-full bg-accent/5 text-accent border border-accent/10">
                   {status}
                 </span>
+                {readingTime && (
+                  <ReadingMetadata 
+                    readingTime={readingTime}
+                    updatedDate={updatedDate}
+                  />
+                )}
               </div>
               
               <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-content-primary mb-6">

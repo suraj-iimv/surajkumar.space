@@ -34,6 +34,8 @@ export default function MonetizationLabPage() {
       description="Exploring the intersection of performance-first commercialization and premium editorial design."
       status="Active Exploration"
       relatedArticles={relatedArticles}
+      readingTime="8 min read"
+      updatedDate="2026-05-14"
     >
       <ExperimentOverview why="Monetization systems often damage user experience through layout shifts and performance degradation. We are exploring how to integrate commercial layers without compromising ecosystem integrity.">
         <p>

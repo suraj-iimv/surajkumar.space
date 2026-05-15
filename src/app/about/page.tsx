@@ -210,24 +210,24 @@ export default function AboutPage() {
           {/* Further Reflections (Ecosystem Continuity) */}
           <ScrollReveal>
             <div className="mb-32 pt-24 border-t border-border">
-              <div className="flex items-end justify-between mb-12 md:mb-16">
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-content-primary">
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
+                <div className="max-w-xl">
+                  <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-content-primary mb-4">
                     Further Reflections
                   </h2>
-                  <p className="mt-2 text-content-tertiary text-base max-w-lg">
-                    Foundational essays on systems thinking, architecture, and the evolution of this lab.
+                  <p className="text-content-secondary text-lg leading-relaxed">
+                    Foundational essays on systems thinking, architecture, and the operational evolution of this digital laboratory.
                   </p>
                 </div>
                 <Link
                   href="/writing"
-                  className="text-sm text-content-tertiary hover:text-content-primary transition-colors duration-300 flex items-center gap-1.5 shrink-0"
+                  className="group flex items-center gap-2 text-sm font-semibold text-content-secondary hover:text-accent transition-all duration-300 px-5 py-2.5 rounded-full border border-border hover:border-accent/30 bg-surface-primary"
                 >
                   View all reflections
-                  <span>→</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {featuredEssays.map((article) => (
                   <ArticleCard key={article.slug} article={article} />
                 ))}
